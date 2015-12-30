@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.aryukov</groupId>
+		<artifactId>telecom</artifactId>
+		<version>0.1</version>
+	</parent>
+    <artifactId>reports</artifactId>
+    <packaging>war</packaging>
+
+	<properties>
+		<hibernate.version>4.3.9.Final</hibernate.version>
+		<postgresql.version>9.3-1102-jdbc41</postgresql.version>
+	</properties>
+
+    <dependencies>
+
+	    <dependency>
+		    <artifactId>models</artifactId>
+		    <groupId>${project.groupId}</groupId>
+		    <version>${project.version}</version>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>com.sun.faces</groupId>
+		    <artifactId>jsf-api</artifactId>
+		    <version>2.1.7</version>
+	    </dependency>
+	    <dependency>
+		    <groupId>com.sun.faces</groupId>
+		    <artifactId>jsf-impl</artifactId>
+		    <version>2.1.7</version>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>javax.servlet.jsp</groupId>
+		    <artifactId>jsp-api</artifactId>
+		    <version>2.1</version>
+	    </dependency>
+	    <!-- Tomcat 6 need this -->
+	    <dependency>
+		    <groupId>com.sun.el</groupId>
+		    <artifactId>el-ri</artifactId>
+		    <version>1.0</version>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>javax.faces</groupId>
+		    <artifactId>jsf-api</artifactId>
+		    <version>2.0</version>
+		    <scope>provided</scope>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>${hibernate.version}</version>
+	    </dependency>
+
+	    <!-- The tutorials use the PostgreSQL 9.3.5 database -->
+	    <dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>${postgresql.version}</version>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.11</version>
+		    <scope>test</scope>
+	    </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+</project>

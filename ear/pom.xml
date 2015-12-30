@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.aryukov</groupId>
+		<artifactId>telecom</artifactId>
+		<version>0.1</version>
+	</parent>
+    <artifactId>ear</artifactId>
+    <packaging>ear</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <applicationXml>${project.basedir}/src/main/application/application.xml</applicationXml>
+                    <generateApplicationXml>false</generateApplicationXml>
+                    <modules>
+                        <webModule>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>contracts</artifactId>
+                            <contextRoot>/contracts</contextRoot>
+                        </webModule>
+	                    <webModule>
+		                    <groupId>${project.groupId}</groupId>
+		                    <artifactId>reports</artifactId>
+		                    <contextRoot>/reports</contextRoot>
+	                    </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <artifactId>reports</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <artifactId>contracts</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+</project>

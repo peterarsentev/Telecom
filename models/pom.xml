@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ru.aryukov</groupId>
+        <artifactId>telecom</artifactId>
+        <version>0.1</version>
+    </parent>
+    <artifactId>models</artifactId>
+    <packaging>jar</packaging>
+
+	<properties>
+		<hibernate.version>4.3.9.Final</hibernate.version>
+		<postgresql.version>9.3-1102-jdbc41</postgresql.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+	</dependencies>
+</project>
